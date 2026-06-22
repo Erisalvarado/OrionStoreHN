@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome para los Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- HEADER (Barra superior y buscador) -->
+    <header class="bg-black text-white sticky top-0 z-50">
+        <!-- Top bar pequeña -->
+        <div class="max-w-7xl mx-auto px-4 py-1 text-xs flex justify-between border-b border-gray-800 text-gray-400">
+            <div><a href="Login.html">Regístrate / Iniciar sesión</div></a>
+            <div class="flex gap-4">
+                <span>Ayuda</span>
+                <span>Protección del comprador</span>
+                <span><i class="fa-solid fa-globe"></i> ES/ / EUR</span>
+            </div>
+        </div>
+        
+        <!-- Barra principal de búsqueda -->
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+            <!-- Logo -->
+            <div class="text-2xl font-bold tracking-wider text-orange-500 flex items-center gap-1">
+                <span class="text-white">Orion</span>Store
+            </div>
+            
+            <!-- Buscador estilo AliExpress -->
+            <div class="flex flex-1 max-w-2xl bg-white rounded-full overflow-hidden border-2 border-orange-500">
+                <input type="text" placeholder="Buscar artículos en oferta..." class="w-full px-5 py-2 text-black outline-none text-sm">
+                <button class="bg-orange-500 text-white px-6 py-2 hover:bg-orange-600 transition">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <!-- Carrito y Usuario -->
+            <div class="flex items-center gap-6 text-sm">
+                <div class="flex items-center gap-2 cursor-pointer hover:text-orange-500">
+                    <i class="fa-regular fa-user text-2xl"></i>
+                    <span class="hidden md:inline">Mi Cuenta</span>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer hover:text-orange-500 relative">
+                    <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">3</span>
+                    <span class="hidden md:inline"><a href="Cesta.html">Cesta</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CUERPO PRINCIPAL (Categorías + Banner) -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Menú Lateral de Categorías -->
+            <aside class="bg-white p-4 rounded-xl shadow-xs hidden lg:block">
+                <h3 class="font-bold text-lg mb-4 text-black"><i class="fa-solid fa-bars mr-2"></i> Categorías</h3>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Moda Mujer</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Moda Hombre</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Telefonía y Telecomunicaciones</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Informática y Oficina</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Electrónica de consumo</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Hogar y Jardín</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                    <li class="hover:text-orange-500 cursor-pointer flex justify-between items-center"><span>Bolsos y Calzado</span> <i class="fa-solid fa-chevron-right text-xs"></i></li>
+                </ul>
+            </aside>
+
+            <!-- Banner Principal (Hero) -->
+            <div class="lg:col-span-3 bg-linear-to-r from-red-500 to-orange-500 rounded-xl p-8 text-white flex flex-col justify-between min-h-[350px] relative overflow-hidden shadow-md">
+                <div class="max-w-md z-10">
+                    <span class="bg-black/30 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Ofertas de Elección</span>
+                    <h1 class="text-4xl font-extrabold mt-4 mb-2 leading-tight">Hasta -70% en tecnología y gadgets</h1>
+                    <p class="text-sm opacity-90 mb-6">Envío gratis en pedidos de más de 10€ y entrega rápida.</p>
+                    <a href="#" class="bg-white text-orange-600 font-bold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition inline-block">Ver Descuentos</a>
+                </div>
+                <!-- Decoración simulando producto -->
+                <div class="absolute right-10 bottom-4 text-[12rem] text-white/10 hidden md:block">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE PRODUCTOS (Grid) -->
+        <section class="mt-12">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-black flex items-center gap-2">
+                        <span class="text-red-500"><i class="fa-solid fa-bolt"></i></span> Plaza / Ofertas Flash
+                    </h2>
+                    <p class="text-xs text-gray-500">Los precios más bajos de los últimos 30 días</p>
+                </div>
+                <!-- Contador regresivo simple simulado -->
+                <div class="flex gap-2 text-sm font-bold text-white bg-black p-2 rounded-lg">
+                    <span class="bg-red-500 px-1 rounded">02</span>:
+                    <span class="bg-red-500 px-1 rounded">45</span>:
+                    <span class="bg-red-500 px-1 rounded">12</span>
+                </div>
+            </div>
+
+            <!-- Grid de productos -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                
+                <!-- Tarjeta Producto 1 (Puedes duplicar este bloque) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md transition group cursor-pointer">
+                    <div class="bg-gray-200 aspect-square w-full flex items-center justify-center relative">
+                        <i class="fa-solid fa-headphones text-gray-400 text-6xl group-hover:scale-105 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-sm">-55%</span>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-xs text-orange-500 font-bold mb-1"><i class="fa-solid fa-star"></i> 4.8 | 10,000+ vendidos</p>
+                        <h4 class="text-sm text-gray-700 truncate font-medium">Auriculares Inalámbricos Bluetooth 5.3 Premium</h4>
+                        <div class="flex items-baseline gap-2 mt-2">
+                            <span class="text-xl font-black text-red-500">4,99€</span>
+                            <span class="text-xs text-gray-400 line-through">12,00€</span>
+                        </div>
+                        <span class="text-[10px] bg-red-50 text-red-600 font-semibold px-1.5 py-0.5 rounded mt-1 inline-block">Envío Gratis</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Producto 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md transition group cursor-pointer">
+                    <div class="bg-gray-200 aspect-square w-full flex items-center justify-center relative">
+                        <i class="fa-solid fa-watch-fitness text-gray-400 text-6xl group-hover:scale-105 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-sm">-40%</span>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-xs text-orange-500 font-bold mb-1"><i class="fa-solid fa-star"></i> 4.6 | 5,000+ vendidos</p>
+                        <h4 class="text-sm text-gray-700 truncate font-medium">Reloj Inteligente Impermeable con Monitor de Ritmo</h4>
+                        <div class="flex items-baseline gap-2 mt-2">
+                            <span class="text-xl font-black text-red-500">14,50€</span>
+                            <span class="text-xs text-gray-400 line-through">24,99€</span>
+                        </div>
+                        <span class="text-[10px] bg-orange-50 text-orange-600 font-semibold px-1.5 py-0.5 rounded mt-1 inline-block">Elección</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Producto 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md transition group cursor-pointer">
+                    <div class="bg-gray-200 aspect-square w-full flex items-center justify-center relative">
+                        <i class="fa-solid fa-plug text-gray-400 text-6xl group-hover:scale-105 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-sm">-80%</span>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-xs text-orange-500 font-bold mb-1"><i class="fa-solid fa-star"></i> 4.9 | 50,000+ vendidos</p>
+                        <h4 class="text-sm text-gray-700 truncate font-medium">Cargador Rápido USB Tipo C de 65W para Móvil</h4>
+                        <div class="flex items-baseline gap-2 mt-2">
+                            <span class="text-xl font-black text-red-500">1,99€</span>
+                            <span class="text-xs text-gray-400 line-through">9,99€</span>
+                        </div>
+                        <span class="text-[10px] bg-red-50 text-red-600 font-semibold px-1.5 py-0.5 rounded mt-1 inline-block">Bienvenida</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Producto 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md transition group cursor-pointer">
+                    <div class="bg-gray-200 aspect-square w-full flex items-center justify-center relative">
+                        <i class="fa-solid fa-shirt text-gray-400 text-6xl group-hover:scale-105 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-sm">-30%</span>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-xs text-orange-500 font-bold mb-1"><i class="fa-solid fa-star"></i> 4.5 | 2,000+ vendidos</p>
+                        <h4 class="text-sm text-gray-700 truncate font-medium">Camiseta de Algodón Oversize Estilo Urbano</h4>
+                        <div class="flex items-baseline gap-2 mt-2">
+                            <span class="text-xl font-black text-red-500">8,99€</span>
+                            <span class="text-xs text-gray-400 line-through">12,85€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Producto 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md transition group cursor-pointer">
+                    <div class="bg-gray-200 aspect-square w-full flex items-center justify-center relative">
+                        <i class="fa-solid fa-keyboard text-gray-400 text-6xl group-hover:scale-105 transition duration-300"></i>
+                        <span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-sm">-62%</span>
+                    </div>
+                    <div class="p-3">
+                        <p class="text-xs text-orange-500 font-bold mb-1"><i class="fa-solid fa-star"></i> 4.7 | 8,000+ vendidos</p>
+                        <h4 class="text-sm text-gray-700 truncate font-medium">Teclado Mecánico RGB Inalámbrico Compacto</h4>
+                        <div class="flex items-baseline gap-2 mt-2">
+                            <span class="text-xl font-black text-red-500">22,00€</span>
+                            <span class="text-xs text-gray-400 line-through">57,99€</span>
+                        </div>
+                        <span class="text-[10px] bg-red-50 text-red-600 font-semibold px-1.5 py-0.5 rounded mt-1 inline-block">Envío Gratis</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 text-sm mt-20 py-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <h5 class="text-white font-bold mb-3">Atención al cliente</h5>
+                <ul class="space-y-2 text-xs">
+                    <li class="hover:underline cursor-pointer">Centro de ayuda</li>
+                    <li class="hover:underline cursor-pointer">Disputas e informes</li>
+                    <li class="hover:underline cursor-pointer">Informar de una infracción de PI</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-3">AliExpress en otros idiomas</h5>
+                <ul class="space-y-2 text-xs">
+                    <li class="hover:underline cursor-pointer">Ruso</li>
+                    <li class="hover:underline cursor-pointer">Portugués</li>
+                    <li class="hover:underline cursor-pointer">Español</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-3">Buscar por categoría</h5>
+                <ul class="space-y-2 text-xs">
+                    <li class="hover:underline cursor-pointer">Lo más popular</li>
+                    <li class="hover:underline cursor-pointer">Producto barato</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-3">Colaboración</h5>
+                <ul class="space-y-2 text-xs">
+                    <li class="hover:underline cursor-pointer">Afiliados</li>
+                    <li class="hover:underline cursor-pointer">Blog de ingeniería</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs mt-10 pt-6 border-t border-gray-800">
+            © 2026 Orion Store By Dany Alvarado.
+        </div>
+    </footer>
+
+</body>
+</html>
